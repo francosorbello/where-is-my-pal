@@ -8,6 +8,8 @@ class Owner(models.Model):
     name = models.CharField(max_length=100)
     instagram = models.CharField(max_length=250)
     phone_number = PhoneNumberField()
+    def __str__(self):
+        return self.name
 
 class OwnerAdminForm(forms.ModelForm):
     phone_number = PhoneNumberFieldForm()

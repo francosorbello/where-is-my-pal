@@ -1,0 +1,9 @@
+{% if pets %}
+    <ul>
+    {% for pet in pets %}
+        <li><a href="/pets/{{ pet.id }}/">{{ pet.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No pets registered.</p>
+{% endif %}
