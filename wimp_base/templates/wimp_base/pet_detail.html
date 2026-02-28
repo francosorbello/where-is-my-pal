@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-12 col-md-6">
+            <div class="card pet-card">
+                <div class="card-body">
+                    <p> {{pet_name}} is lost! </p>
+                    <p> Contact me at: </p>
+                    <ul>
+                        <li> My name is: {{owner_name}} </li>
+                        <li> Phone number: {{owner_phone}} </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
