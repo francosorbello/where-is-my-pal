@@ -3,8 +3,9 @@
 {% comment %} Add cropper dependency to header {% endcomment %}
 {% block extrahead %}
 {{ block.super }}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+{% comment %} Note: this is using Cropper v1 https://fengyuanchen.github.io/cropperjs/v1/ {% endcomment %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
 {% endblock %}
 
 {% block after_field_sets %}
