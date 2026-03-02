@@ -48,5 +48,9 @@ body {
 
 .user-info-title {
   color: rgb(95, 95, 95);
-  font-size: x-small;
+  font-size: small;
+}
+
+.separator {
+  color: black;
 }
