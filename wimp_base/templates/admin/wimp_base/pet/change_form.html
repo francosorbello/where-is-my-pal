@@ -1,0 +1,60 @@
+{% extends "admin/change_form.html" %}
+
+{% comment %} Add cropper dependency to header {% endcomment %}
+{% block extrahead %}
+{{ block.super }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+{% endblock %}
+
+{% block after_field_sets %}
+{{ block.super }}
+
+<script>
+let cropper;
+
+document.querySelector('input[type=file]').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        let wrapper = document.getElementById('cropperWrapper');
+        if (!wrapper) {
+            wrapper = document.createElement('div');
+            wrapper.id = 'cropperWrapper';
+            wrapper.style.cssText = 'width:250px;height:250px;overflow:hidden;margin-top:10px;';
+            const img = document.createElement('img');
+            img.id = 'cropperImage';
+            img.style.maxWidth = '100%';
+            wrapper.appendChild(img);
+
+            const btn = document.createElement('button');
+            btn.textContent = 'Confirm crop';
+            btn.type = 'button';
+            btn.style.marginTop = '8px';
+            btn.addEventListener('click', function() {
+                const canvas = cropper.getCroppedCanvas({ width: 250, height: 250 });
+                document.querySelector('input[name=cropped_image]').value = canvas.toDataURL('image/jpeg');
+            });
+
+            e.target.parentNode.appendChild(wrapper);
+            e.target.parentNode.appendChild(btn);
+        }
+
+        document.getElementById('cropperImage').src = event.target.result;
+        wrapper.style.display = 'block';
+
+        if (cropper) cropper.destroy();
+        cropper = new Cropper(document.getElementById('cropperImage'), {
+            aspectRatio: 1,
+            viewMode: 1,
+            minContainerWidth: 250,
+            minContainerHeight: 250,
+            cropBoxResizable: false
+        });
+    };
+    reader.readAsDataURL(file);
+});
+</script>
+{% endblock %}
