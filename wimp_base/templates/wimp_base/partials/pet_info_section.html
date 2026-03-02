@@ -5,11 +5,19 @@
     border-radius: 20px;
     padding: 8px 16px 8px 16px;
 }
+.pet-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 120px;
+    border: 5px solid #EEE3D7;
+    /* border-color: red; */
+}
 </style>
 
 <p> {{pet_name}} is lost! </p>
 <div class="container">
-    <div class="row">
+    <div class="row mt-3">
+        <!-- "YOU FOUND A PET" PILL -->
         <div class="col text-center">
             <div class="title-pill">                
                 <svg class="p-inline" width="16" height="16">
@@ -18,6 +26,12 @@
                 </svg>
                 <span style="color: #31835D;">You found a lost pet!</span>         
             </div>
+        </div>
+    </div>
+    <!-- PET IMAGE -->
+    <div class="row mt-3">
+        <div class="col text-center">
+            <img class="pet-photo" src="{{pet_photo.url}}" alt="...">
         </div>
     </div>
 </div>

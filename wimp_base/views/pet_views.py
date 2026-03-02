@@ -11,8 +11,9 @@ def pet_detail(request, pet_id):
 
         context = {
             "pet_name" : pet.name,
+            "pet_photo" : pet.photo,
             "owner_name" : owner.name,
-            "owner_phone" : owner.phone_number
+            "owner_phone" : owner.phone_number,
         }
     except Pet.DoesNotExist:
         raise Http404(f"No pet with id ${pet_id}")
