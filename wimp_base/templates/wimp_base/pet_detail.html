@@ -38,24 +38,19 @@
 {% block content %}
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-4">
             <div class="card pet-card">
-                <div class="card-body">
-                    <div class="row">
-                        <p> {{pet_name}} is lost! </p>
-                    </div>
-                    <div class="row">
-                        {%with card_title="OWNER" card_content=owner_name%}
-                        {%partial user-info %}
-                        {%endwith%}
-                    </div>
-                    <br>
-                    <div class="row">
-                        {%with card_title="PHONE" card_content=owner_phone%}
-                        {%partial user-info %}
-                        {%endwith%}
-                    </div>
+                <div class="card-body g-4">
+                    <p> {{pet_name}} is lost! </p>
+                    <hr>
+                    <p class="user-info-title" style="margin-bottom: 0.5rem;">OWNER INFORMATION</p>
+                    {%with card_title="OWNER" card_content=owner_name%}
+                    {%partial user-info %}
+                    {%endwith%}
 
+                    {%with card_title="PHONE" card_content=owner_phone%}
+                    {%partial user-info %}
+                    {%endwith%}
                 </div>
             </div>
         </div>
