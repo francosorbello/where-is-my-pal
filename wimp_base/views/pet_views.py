@@ -14,6 +14,7 @@ def pet_detail(request, pet_id):
             "pet_photo" : pet.photo,
             "owner_name" : owner.name,
             "owner_phone" : owner.phone_number,
+            "owner_instagram" : owner.instagram,
         }
     except Pet.DoesNotExist:
         raise Http404(f"No pet with id ${pet_id}")
