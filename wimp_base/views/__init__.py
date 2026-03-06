@@ -6,7 +6,7 @@ from wimp_base.models.pet_model import Pet
 from .pet_views import *
 
 def index(request):
-    pets = Pet.objects.all()
+    pets = Pet.objects.filter(hidden=False)
     template = loader.get_template("index.html")
     context = {"pets" : pets}
     return render(request,"index.html",context)
