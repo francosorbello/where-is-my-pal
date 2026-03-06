@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 
 <!-- PHONE ICON PARTIAL -->
 {%partialdef phone-icon %}
@@ -31,7 +31,7 @@
         {%partial phone-icon %}
         {% endif %}
         <div style="padding-left: 8px; padding-bottom: 1px;">
-            <span class="user-info-title">{{card_title}}</span> <br>
+            <span class="user-info-title">{% trans card_title %}</span> <br>
             <b>{{card_content}}</b>
         </div>
     </div>
@@ -48,7 +48,7 @@
                     {% include "wimp_base/partials/pet_info_section.html" %}
                     <hr class="separator">
                     <!-- SECTION 2: OWNER INFO -->
-                    <p class="user-info-title" style="margin-bottom: 0.5rem;">OWNER INFORMATION</p>
+                    <p class="user-info-title" style="margin-bottom: 0.5rem;">{% trans "OWNER INFORMATION" %}</p>
                     {%with card_title="OWNER" card_content=owner_name%}
                     {%partial user-info %}
                     {%endwith%}

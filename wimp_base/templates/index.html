@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block content %}
 <style>
@@ -73,7 +73,7 @@
 <div class="container">
     <div class="row mt-4">
         <div class="col text-center">
-            <h1>Your pets</h1>
+            <h1>{% trans "Your pets" %}</h1>
             <hr>
         </div>
     </div>
@@ -85,7 +85,7 @@
             <a href="/pets/{{ pet.id }}/" class="pet-card-index">
                 <img class="pet-photo-index" src="{{ pet.photo.url }}" alt="{{ pet.name }}">
                 <p class="pet-name-index">{{ pet.name }}</p>
-                <p class="pet-owner-index">Owner: {{ pet.owner.name }}</p>
+                <p class="pet-owner-index">{% blocktrans with owner_name=pet.owner.name %}Owner: {{ owner_name }}{% endblocktrans %}</p>
             </a>
         </div>
         {% endfor %}
@@ -93,7 +93,7 @@
     {% else %}
     <div class="row mt-4">
         <div class="col text-center">
-            <p class="user-info-title">No pets registered.</p>
+            <p class="user-info-title">{% trans "No pets registered." %}</p>
         </div>
     </div>
     {% endif %}

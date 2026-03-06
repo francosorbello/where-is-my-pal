@@ -1,0 +1,62 @@
+# Spanish translations for PACKAGE
+# Copyright (C) 2026 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-06 15:38+0000\n"
+"PO-Revision-Date: 2026-03-06 15:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: wimp_base/templates/base.html:8
+msgid "Where is my pal?"
+msgstr "¿Dónde está mi amigo?"
+
+#: wimp_base/templates/index.html:76
+msgid "Your pets"
+msgstr "Tus mascotas"
+
+#: wimp_base/templates/index.html:88
+#, python-format
+msgid "Owner: %(owner_name)s"
+msgstr "Dueño: %(owner_name)s"
+
+#: wimp_base/templates/index.html:96
+msgid "No pets registered."
+msgstr "No hay mascotas registradas."
+
+#: wimp_base/templates/wimp_base/partials/pet_get_in_touch_section.html:2
+msgid "GET IN TOUCH"
+msgstr "CONTACTAME"
+
+#: wimp_base/templates/wimp_base/partials/pet_get_in_touch_section.html:8
+msgid "Contact via WhatsApp"
+msgstr "Contactar por WhatsApp"
+
+#: wimp_base/templates/wimp_base/partials/pet_get_in_touch_section.html:15
+msgid "Contact via Instagram"
+msgstr "Contactar por Instagram"
+
+#: wimp_base/templates/wimp_base/partials/pet_get_in_touch_section.html:22
+msgid "Call directly"
+msgstr "Llamar directamente"
+
+#: wimp_base/templates/wimp_base/partials/pet_info_section.html:27
+msgid "You found a lost pet!"
+msgstr "¡Encontraste una mascota perdida!"
+
+#: wimp_base/templates/wimp_base/partials/pet_info_section.html:39
+msgid "Help me get back home!"
+msgstr "¡Ayúdame a volver a casa!"
+
+#: wimp_base/templates/wimp_base/pet_detail.html:51
+msgid "OWNER INFORMATION"
+msgstr "INFORMACIÓN DEL DUEÑO"

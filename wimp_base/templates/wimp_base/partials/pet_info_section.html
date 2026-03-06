@@ -1,3 +1,4 @@
+{% load i18n %}
 <style>
 .title-pill {
     display: inline-block;
@@ -23,7 +24,7 @@
                     <circle cx="7px" cy="7px" r="7px" fill="#44b37f3a"/>
                     <circle cx="7px" cy="7px" r="5px" fill="#31835D"/>
                 </svg>
-                <span style="color: #31835D;">You found a lost pet!</span>         
+                <span style="color: #31835D;">{% trans "You found a lost pet!" %}</span>         
             </div>
         </div>
     </div>
@@ -35,6 +36,6 @@
     </div>
     <div class="row mt-3 text-center">
         <h1><b>{{pet_name}}</b></h1>
-        <p class="user-info-title">Help me get back home!</p>
+        <p class="user-info-title">{% trans "Help me get back home!" %}</p>
     </div>
 </div>
