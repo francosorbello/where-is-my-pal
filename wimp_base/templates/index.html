@@ -1,13 +1,68 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-{% if pets %}
-    <ul>
-    {% for pet in pets %}
-        <li><a href="/pets/{{ pet.id }}/">{{ pet.name }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No pets registered.</p>
-{% endif %}
+<style>
+.pet-card-index {
+    background-color: #EEE3D7;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+    text-decoration: none;
+    display: block;
+}
+.pet-card-index:hover {
+    transform: scale(1.02);
+}
+.pet-photo-index {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #EEE3D7;
+    object-fit: cover;
+}
+.pet-name-index {
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.pet-owner-index {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+</style>
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col text-center">
+            <h1>Your pets</h1>
+            <hr>
+        </div>
+    </div>
+
+    {% if pets %}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for pet in pets %}
+        <div class="col">
+            <a href="/pets/{{ pet.id }}/" class="pet-card-index">
+                <img class="pet-photo-index" src="{{ pet.photo.url }}" alt="{{ pet.name }}">
+                <p class="pet-name-index">{{ pet.name }}</p>
+                <p class="pet-owner-index">Owner: {{ pet.owner.name }}</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="row mt-4">
+        <div class="col text-center">
+            <p class="user-info-title">No pets registered.</p>
+        </div>
+    </div>
+    {% endif %}
+</div>
 {% endblock content %}
