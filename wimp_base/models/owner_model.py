@@ -5,9 +5,9 @@ from phonenumber_field.formfields import SplitPhoneNumberField as PhoneNumberFie
 from django.contrib import admin
 
 class Owner(models.Model):
-    name = models.CharField(max_length=100)
-    instagram = models.CharField(max_length=250)
-    phone_number = PhoneNumberField()
+    name = models.CharField(max_length=100, blank=False)
+    instagram = models.CharField(max_length=250, blank=True)
+    phone_number = PhoneNumberField(blank=False)
     def __str__(self):
         return self.name
 
