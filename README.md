@@ -26,6 +26,7 @@ Self-hosted webapp that helps you locate your pet if it gets lost!
 
 ## Local Development Setup
 
+### 1. Repo setup
 ```bash
 # Clone the repository
 git clone https://github.com/francosorbello/where-is-my-pal.git
@@ -51,6 +52,24 @@ python manage.py createsuperuser
 
 # Start the development server
 python manage.py runserver
+```
+### 2. Generating a new SECRET_KEY
+
+You'll need a secret key to execute the server. Setup one with the following steps.
+
+```bash
+# Open the python shell
+python manage.py shell
+
+# Generate a key and copy the result
+>>> from django.core.management.utils import get_random_secret_key
+>>> print(get_random_secret_key())
+
+# Create a .env file in the root directory
+touch .env
+
+# Set the SECRET_KEY variable with your generated key
+SECRET_KEY = "<your generated key>"
 ```
 
 After running these commands:
