@@ -1,7 +1,5 @@
 name: where-is-my-pal-dev
 
-# This is the equivalent of 
-# docker run -d --name wimp-dev-container --env-file .env -p 8000:8000 whereismypal_dev
 services:
   app:
     build:
@@ -13,3 +11,5 @@ services:
       - .env
     ports:
       - "8000:8000"
+    volumes:
+      - ./db.sqlite3:/db.sqlite3
