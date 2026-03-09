@@ -1,0 +1,15 @@
+name: where-is-my-pal-dev
+
+# This is the equivalent of 
+# docker run -d --name wimp-dev-container --env-file .env -p 8000:8000 whereismypal_dev
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: whereismypal_dev
+    container_name: wimp-dev-container
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
