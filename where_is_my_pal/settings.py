@@ -152,6 +152,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
 STORAGES = {
+    "default": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },

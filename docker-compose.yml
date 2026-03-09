@@ -12,4 +12,5 @@ services:
     ports:
       - "8000:8000"
     volumes:
+      # - ./static:/app/staticfiles
       - ./db.sqlite3:/db.sqlite3

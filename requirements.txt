@@ -3,6 +3,8 @@ babel==2.18.0
 Django==6.0.2
 django-phonenumber-field==8.4.0
 dotenv==0.9.9
+gunicorn==25.1.0
+packaging==26.0
 phonenumberslite==9.0.24
 pillow==12.1.1
 python-dotenv==1.2.2
