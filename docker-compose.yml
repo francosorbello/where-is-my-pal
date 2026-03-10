@@ -8,9 +8,10 @@ services:
     image: whereismypal_dev
     container_name: wimp-dev-container
     env_file:
-      - .env
+      - .env.prod
     ports:
       - "8000:8000"
     volumes:
       # - ./static:/app/staticfiles
-      - ./db.sqlite3:/db.sqlite3
+      # - ./db.sqlite3:/db.sqlite3
+      - ./prod:/prod

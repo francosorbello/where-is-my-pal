@@ -18,6 +18,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 env_path = os.path.join(BASE_DIR,".env")
 if os.path.exists(env_path):
+    print("Loading environment variables from .env file")
     load_dotenv(env_path)
 
 # Quick-start development settings - unsuitable for production
@@ -27,14 +28,13 @@ if os.path.exists(env_path):
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get("DEBUG",default=0))
+DEBUG = bool(os.environ.get("DEBUG",default=1))
 
 # ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS","127.0.0.1").split(",")
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost"
 ]
-
 
 # Application definition
 
@@ -81,6 +81,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'where_is_my_pal.wsgi.application'
 
+prod_vol_folder = BASE_DIR / os.environ.get("PROD_VOLUME",default="")
+print("prod_vol_folder is:",prod_vol_folder,os.environ.get("PROD_VOLUME",default="No PROD_VOLUME ENV"))
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
@@ -88,7 +90,8 @@ WSGI_APPLICATION = 'where_is_my_pal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'NAME': prod_vol_folder / 'db.sqlite3',
+        'NAME': os.path.join(prod_vol_folder,'db.sqlite3')
     }
 }
 
@@ -148,7 +151,7 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # where collectstatic outputs to
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(prod_vol_folder,'media')
 MEDIA_URL = '/media/'
 
 STORAGES = {

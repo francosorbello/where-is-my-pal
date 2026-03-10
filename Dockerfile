@@ -26,6 +26,9 @@ COPY --from=builder /usr/local/bin/ /usr/local/bin/
 WORKDIR /app
 COPY --chown=appuser:appuser . . 
 
+ENV PROD_VOLUME="prod"
+RUN mkdir -p prod
+
 RUN python manage.py makemigrations
 RUN python manage.py migrate
 RUN python manage.py collectstatic --noinput
