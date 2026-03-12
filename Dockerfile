@@ -29,11 +29,10 @@ COPY --chown=appuser:appuser . .
 ENV PROD_VOLUME="prod"
 RUN mkdir -p prod
 
-RUN python manage.py makemigrations
-RUN python manage.py migrate
-RUN python manage.py collectstatic --noinput
+COPY --chown=appuser:appuser entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 EXPOSE 8000
 
-CMD ["python","-m","gunicorn","--bind","0.0.0.0:8000","--workers","3","where_is_my_pal.wsgi:application"]
+ENTRYPOINT ["/entrypoint.sh"]
 
