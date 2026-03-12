@@ -2,7 +2,7 @@ name: where-is-my-pal-dev
 
 secrets:
   app_secrets:
-    file: ./secrets/secrets.env
+    file: ./secrets.env
 
 services:
   app:

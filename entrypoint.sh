@@ -5,7 +5,7 @@ set -a
 source /run/secrets/app_secrets
 set +a
 
-# export DEBUG=0
+export DEBUG=0
 
 
 python manage.py makemigrations --noinput

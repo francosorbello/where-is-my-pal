@@ -101,6 +101,7 @@ celerybeat-schedule.*
 .env*
 .venv
 secrets/ 
+secrets.env
 env/ 
 venv/ 
 ENV/ 

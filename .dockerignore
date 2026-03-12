@@ -10,13 +10,19 @@ media
 .env 
 .venv
 secrets/ 
-env/ 
-venv/ 
-ENV/ 
-env.bak/ 
-venv.bak/ 
+secrets.env
 
 # Visual Studio Code
 .vscode/*
 .history
+
+# DOcker
+docker-compose.yml
 Dockerfile
+
+# Others
+screenshots/
+logs.txt
+AGENTS.md
+LICENSE.md
+README.md
