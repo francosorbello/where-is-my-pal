@@ -19,7 +19,7 @@ Self-hosted webapp that helps you locate your pet if it gets lost!
 
 - **Framework**: Django 6.0.2
 - **Language**: Python 3.x
-- **Database**: SQLite (development)
+- **Database**: SQLite
 - **Image Processing**: Pillow
 - **QR Code Generation**: qrcode
 - **Phone Numbers**: django-phonenumber-field
@@ -85,6 +85,28 @@ After running these commands:
 3. **Generate QR Code** - The system automatically creates a unique QR code that links to the pet's public profile
 4. **Print and Attach** - Download the QR code, print it, and attach it to your pet's collar
 5. **Get Found** - When someone finds your pet, they scan the QR code and see your contact information immediately
+
+## Production setup
+
+This project comes with a Dockerfile already setup to create a production build.
+
+For it to work, the project expects a `secrets.env` file with the following parameters:
+
+```sh
+SECRET_KEY="your django secret key"
+DJANGO_SUPERUSER_USERNAME="your admin username"
+DJANGO_SUPERUSER_EMAIL="your admin mail"
+DJANGO_SUPERUSER_PASSWORD="your admin password"
+```
+
+This file must be in the **root directory**. An example file is provided in this repo. You may rename it to `secrets.env`.
+
+You can then build and run the project using the following command:
+```sh
+docker-compose up -d --build
+```
+
+> Note: A "prod" folder may be created when you start your docker project. This folder will contain your production database and pet images. Do not delete or you will lose your data if your server goes down.
 
 ## Screenshots
 
