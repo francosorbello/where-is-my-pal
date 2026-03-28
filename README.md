@@ -6,6 +6,15 @@ Self-hosted webapp that helps you locate your pet if it gets lost!
 
 "Where is my pal?" allows you to create a QR code that can be attached to your pet's collar. When someone finds your pet, they simply scan the QR code and instantly see your contact information along with your pet's photo and details.
 
+
+## How It Works
+
+1. **Create an Owner** - Add the pet owner's name, phone number, and optional Instagram handle
+2. **Add a Pet** - Create a pet profile with the pet's name and upload a photo
+3. **Generate QR Code** - The system automatically creates a unique QR code that links to the pet's public profile
+4. **Print and Attach** - Download the QR code, print it, and attach it to your pet's collar
+5. **Get Found** - When someone finds your pet, they scan the QR code and see your contact information immediately
+
 ## Features
 
 - **Owner Management** - Store contact information including name, phone number, and Instagram profile
@@ -23,6 +32,7 @@ Self-hosted webapp that helps you locate your pet if it gets lost!
 - **Image Processing**: Pillow
 - **QR Code Generation**: qrcode
 - **Phone Numbers**: django-phonenumber-field
+
 
 ## Local Development Setup
 
@@ -77,14 +87,6 @@ After running these commands:
 1. Open your browser and go to `http://127.0.0.1:8000/admin`
 2. Log in with the superuser account you created
 3. Start by creating an Owner, then add Pets, and generate QR codes
-
-## How It Works
-
-1. **Create an Owner** - Add the pet owner's name, phone number, and optional Instagram handle
-2. **Add a Pet** - Create a pet profile with the pet's name and upload a photo
-3. **Generate QR Code** - The system automatically creates a unique QR code that links to the pet's public profile
-4. **Print and Attach** - Download the QR code, print it, and attach it to your pet's collar
-5. **Get Found** - When someone finds your pet, they scan the QR code and see your contact information immediately
 
 ## Production setup
 
